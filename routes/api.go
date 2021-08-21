@@ -6,6 +6,6 @@ import (
 
 func InitApiRoutes(app *fiber.App) {
 	app.Get("/", func(ctx *fiber.Ctx) error {
-		return ctx.SendString("Yo start the go api frm app")
+		return ctx.SendString("Tchalley tu veux quoi la conf est bonne")
 	})
 }
