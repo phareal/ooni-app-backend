@@ -13,9 +13,13 @@ func main() {
 	app := fiber.New()
 	//load the env variable
 	errEnv := godotenv.Load()
-	if errEnv != nil {
-		panic("Unable to load the environnement file")
+
+	if os.Getenv("APP_ENV")!= "production" {
+		if errEnv != nil {
+			panic("Unable to load the environnement file")
+		}
 	}
+
 	database.InitDatabase()
 	routes.InitApiRoutes(app)
 	appPort := os.Getenv("PORT")
