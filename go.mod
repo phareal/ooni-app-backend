@@ -1,4 +1,4 @@
-module github.com/phareal/ooni-app-backend
+module ooni/backend
 
 go 1.17
 

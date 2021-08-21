@@ -4,8 +4,7 @@ import (
 	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
-	"github.com/phareal/ooni-app-backend/core/database"
-	"github.com/phareal/ooni-app-backend/routing"
+	"ooni/backend/core/database"
 	"os"
 )
 
@@ -17,7 +16,6 @@ func main() {
 		panic("Unable to load the environnement file")
 	}
 	database.InitDatabase()
-	routing.InitApiRoutes(app)
 	appPort := os.Getenv("PORT")
 	err := app.Listen(":" + appPort)
 	if err != nil {
