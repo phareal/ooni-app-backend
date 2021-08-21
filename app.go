@@ -5,6 +5,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
 	"ooni/backend/core/database"
+	"ooni/backend/routes"
 	"os"
 )
 
@@ -16,6 +17,7 @@ func main() {
 		panic("Unable to load the environnement file")
 	}
 	database.InitDatabase()
+	routes.InitApiRoutes(app)
 	appPort := os.Getenv("PORT")
 	err := app.Listen(":" + appPort)
 	if err != nil {

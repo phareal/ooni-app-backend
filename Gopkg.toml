@@ -1,3 +1,0 @@
-[metadata.heroku]
-  root-package = "ooni-back"
-  install = ["./..."]
