@@ -19,7 +19,6 @@ func main() {
 			panic("Unable to load the environnement file")
 		}
 	}
-
 	database.InitDatabase()
 	routes.InitApiRoutes(app)
 	appPort := os.Getenv("PORT")
