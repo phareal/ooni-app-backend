@@ -6,4 +6,8 @@ func SetWebappRoutes(app *fiber.App) {
 	app.Get("/", func(ctx *fiber.Ctx) error {
 		return  ctx.Render("index",fiber.Map{})
 	})
+	app.Get("/login", func(ctx *fiber.Ctx) error {
+		return  ctx.Render("login",fiber.Map{})
+	})
+
 }

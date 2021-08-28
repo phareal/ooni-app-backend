@@ -11,12 +11,15 @@ import (
 )
 
 func main() {
+	errEnv := godotenv.Load()
 	viewEngine := html.New("./views",".html")
+
 	app := fiber.New(fiber.Config{
 		Views: viewEngine,
 	})
+	app.Static("/", "./public")
 	//load the env variable
-	errEnv := godotenv.Load()
+
 
 	if os.Getenv("APP_ENV")!= "production" {
 		if errEnv != nil {
