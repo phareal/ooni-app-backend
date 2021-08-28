@@ -6,8 +6,8 @@ import (
 
 type User struct {
 	ID int `gorm:"primary_key, AUTO_INCREMENT"`
-	Email string
-	Password   string
+	Email string  `json:"email"`
+	Password   string `json:"password"`
 	CreatedAt time.Time
 }
 

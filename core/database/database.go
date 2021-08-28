@@ -17,6 +17,5 @@ func InitDatabase() *gorm.DB {
 		panic("Error connecting to database")
 	}
 	SetupDatabase(db)
-	SeedDatabase(db)
 	return db
 }
