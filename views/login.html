@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="/melody/css/melody-base.css">
     <link rel="stylesheet" href="/melody/css/melody-addons.css">
     <link rel="stylesheet" href="/melody/css/melody.css">
@@ -15,12 +16,22 @@
             <div class="row flex-grow">
                 <div class="col-lg-6 d-flex align-items-center justify-content-center">
                     <div class="auth-form-transparent text-left p-3">
+                        <!-- display the error box here -->
+                        {{if .errors}}
+                        <div class="alert alert-fill-danger" role="alert">
+                            <i class="fa fa-exclamation-triangle"></i>
+                            {{ if .errors.empty_fields }} {{.errors.empty_fields}}
+                                {{else if .errors.email}} {{ .errors.email}}
+                                {{else if .errors.noUser}}  {{ .errors.noUser}}
+                            {{- end}}
+                        </div>
+                        {{- end}}
                         <div class="brand-logo">
                             <img src="../../images/logo.svg" alt="logo">
                         </div>
                         <h4>Welcome back!</h4>
                         <h6 class="font-weight-light">Happy to see you again!</h6>
-                        <form class="pt-3">
+                        <form class="pt-3" action="/login" method="post">
                             <div class="form-group">
                                 <label for="exampleInputEmail">Username</label>
                                 <div class="input-group">
@@ -29,7 +40,8 @@
                         <i class="fa fa-user text-primary"></i>
                       </span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg border-left-0" id="exampleInputEmail" placeholder="Username">
+                                    <input type="text" class="form-control form-control-lg border-left-0"
+                                           id="exampleInputEmail" placeholder="Email" name="email">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -40,17 +52,21 @@
                         <i class="fa fa-lock text-primary"></i>
                       </span>
                                     </div>
-                                    <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password">
+                                    <input type="password" class="form-control form-control-lg border-left-0"
+                                           id="exampleInputPassword" placeholder="Password" name="password">
                                 </div>
                             </div>
                             <div class="my-3">
-                                <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index-2.html">LOGIN</a>
+                                <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
+                                        type="submit">LOGIN
+                                </button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="col-lg-6 login-half-bg d-flex flex-row">
-                    <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2018  All rights reserved.</p>
+                    <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2018
+                        All rights reserved.</p>
                 </div>
             </div>
         </div>

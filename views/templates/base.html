@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ooni App</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="/aero/css/vector.css">
+  <link rel="stylesheet" href="/aero/css/chart.css">
+  <link rel="stylesheet" href="/aero/css/morris.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" href="/aero/css/aero.css">
+</head>
+<body class="theme-blush">
+
+
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+
+
+<!-- Left Sidebar -->
+{{template "partials/left-menu" .}}
+
+<section class="content">
+  <div class="">
+    <div class="block-header">
+      <div class="row">
+        <div class="col-lg-7 col-md-6 col-sm-12">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#">
+                <i class="zmdi zmdi-home"></i> Ooni App
+              </a>
+            </li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ul>
+          <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+        {{embed}}
+    </div>
+  </div>
+</section>
+<!-- Jquery Core Js -->
+<script src="/aero/js/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) -->
+<script src="/aero/js/vendorscripts.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
+
+<script src="/aero/js/jvectors.js"></script> <!-- JVectorMap Plugin Js -->
+<script src="/aero/js/sparkline.js"></script> <!-- Sparkline Plugin Js -->
+<script src="/aero/js/c3.bundle.js"></script>
+
+<script src="/aero/js/mainscripts.js"></script>
+<script src="/aero/js/index.js"></script>
+</body>
+</html>

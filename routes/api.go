@@ -1,7 +1,6 @@
 package routes
 
 import (
-	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"ooni/backend/controllers"
 )
@@ -18,7 +17,6 @@ func InitApiRoutes(app *fiber.App) {
 }
 
 func authentication(apiRouter fiber.Router) {
-	fmt.Print("sdsds")
 	authRouter := apiRouter.Group("/auth",func( ctx *fiber.Ctx) error {
 		return ctx.Next()
 	})
