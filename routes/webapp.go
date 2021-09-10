@@ -4,6 +4,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/session"
 	"net/http"
+	"ooni/backend/core/database"
 	"ooni/backend/models"
 	"regexp"
 )
@@ -48,8 +49,23 @@ func SetWebappRoutes(app *fiber.App) {
 	app.Get("/users", func(ctx *fiber.Ctx) error {
 		// get all the users
 
-	   return  ctx.Render("users",fiber.Map{},"templates/base")
+		var db = database.InitDatabase()
+		var users [] models.User
+
+		results := db.Find(&users);
+		if results.Error != nil {
+			panic(results.Error)
+		}
+	   return  ctx.Render("users",fiber.Map{
+	   	 "users":users,
+	   },"templates/base")
+
 	})
+
+
+
+
+
 
 	app.Post("/login", func(ctx *fiber.Ctx) error {
 		sess, err := store.Get(ctx)

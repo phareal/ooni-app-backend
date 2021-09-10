@@ -19,3 +19,8 @@ func InitDatabase() *gorm.DB {
 	SetupDatabase(db)
 	return db
 }
+
+
+func CloseConnection(db *gorm.DB) {
+
+}
