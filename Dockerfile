@@ -26,5 +26,5 @@ WORKDIR /app
 COPY --from=api /usr/src/ooni_app .
 
 # Run application and expose port 8080.
-EXPOSE 5000
+EXPOSE 8080
 CMD ["./app"]

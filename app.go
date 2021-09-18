@@ -25,8 +25,9 @@ func main() {
 		if errEnv != nil {
 			panic("Unable to load the environnement file")
 		}
+		database.InitDatabase()
 	}
-	database.InitDatabase()
+
 	routes.SetWebappRoutes(app)
 	routes.InitApiRoutes(app)
 
