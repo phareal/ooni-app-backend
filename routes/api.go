@@ -20,7 +20,7 @@ func authentication(apiRouter fiber.Router) {
 	authRouter := apiRouter.Group("/auth",func( ctx *fiber.Ctx) error {
 		return ctx.Next()
 	})
-	authRouter.Post("/login",authController.Login)
+	authRouter.Post("/register",authController.Register)
 
 }
 
